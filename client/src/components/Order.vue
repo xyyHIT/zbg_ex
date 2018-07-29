@@ -74,15 +74,12 @@ export default {
     onQuery() {
       let config = {
         method: "post",
-        url: "/zbg/findbypage",
-        data: {
-          user: this.form.user
-        }
+        url: "/zbg/myBalance"
       };
       this.$ajax(config).then(response => {
         let resData = response.data;
         console.log("resData ===>" + JSON.stringify(resData));
-        this.myBalances[this.form.user] = resData;
+        this.myBalances = resData;
       });
     }
   }
