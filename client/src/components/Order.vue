@@ -4,6 +4,7 @@
       <el-form-item label="活动区域">
         <el-select v-model="form.market" placeholder="交易币类型">
           <el-option value="336" label="zt_usdt"></el-option>
+          <el-option value="333" label="zt_eos"></el-option>
         </el-select>
       </el-form-item>
 
@@ -73,6 +74,7 @@ export default {
         }
         this.form.amount = config.data.amount;
         this.form.price = config.data.price;
+        this.form.market = config.data.market;
         this.onQuery();
       });
     },
@@ -106,6 +108,7 @@ export default {
         }
         this.form.amount = config.data.amount;
         this.form.price = config.data.price;
+        this.form.market = config.data.market;
         this.onQuery();
       });
     },
