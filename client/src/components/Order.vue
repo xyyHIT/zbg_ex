@@ -4,7 +4,7 @@
       <el-form-item label="活动区域">
         <el-select v-model="form.market" placeholder="交易币类型">
           <el-option value="336" label="zt_usdt"></el-option>
-          <el-option value="333" label="zt_eos"></el-option>
+          <el-option value="333" label="eos_usdt"></el-option>
         </el-select>
       </el-form-item>
 
