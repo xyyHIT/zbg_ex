@@ -61,15 +61,13 @@ export default {
           this.$notify({
             title: "成功",
             message: resData.msg,
-            type: "success",
-            duration: 0
+            type: "success"
           });
         } else {
           this.$notify({
             title: "失败",
             message: resData.msg,
-            type: "error",
-            duration: 0
+            type: "error"
           });
         }
         this.form.amount = config.data.amount;
