@@ -16,10 +16,6 @@
         </el-radio-group>
       </el-form-item>
 
-      <el-form-item label="价格">
-        <el-input v-model="form.price"></el-input>
-      </el-form-item>
-
       <el-form-item label="数量">
         <el-input v-model="form.amount"></el-input>
       </el-form-item>
@@ -30,6 +26,7 @@
         <el-button @click="onQuery">查询余额</el-button>
       </el-form-item>
     </el-form>
+
   </div>
 </template>
 
@@ -38,6 +35,11 @@ export default {
   data() {
     return {
       form: { market: "coin-usdt-btc", user: "", price: "", amount: "" },
+      formDeal: {
+        buy_price: "",
+        buy_amount: "",
+        sell_amount: ""
+      },
       myBalances: []
     };
   },
@@ -52,8 +54,7 @@ export default {
         data: {
           amount: this.form.amount, //下单数量
           user: user, //买卖类型：0 卖出 1 购买
-          market: this.form.market, //市场ID
-          price: this.form.price
+          market: this.form.market //市场ID
         }
       };
       this.$ajax(config).then(response => {
@@ -72,7 +73,6 @@ export default {
           });
         }
         this.form.amount = config.data.amount;
-        this.form.price = config.data.price;
         this.form.market = config.data.market;
         this.onQuery();
       });
