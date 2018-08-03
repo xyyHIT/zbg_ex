@@ -24,11 +24,18 @@ module.exports = {
         pathRewrite: {
           '^/bitforex': '/bitforex'
         }
+      },
+      '/digifinex': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/digifinex': '/digifinex'
+        }
       }
     },
     // Various Dev Server settings
-    host: '172.31.15.102', // can be overwritten by process.env.HOST
-    port: 8000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: 'localhost', // can be overwritten by process.env.HOST
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
