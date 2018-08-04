@@ -53,7 +53,8 @@ export default {
         url: "/digifinex/placeOrder",
         data: {
           user: user, //买卖类型：0 卖出 1 购买
-          market: this.form.market //市场ID
+          market: this.form.market, //市场ID
+          amount: this.form.amount
         }
       };
       this.$ajax(config).then(response => {
